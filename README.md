@@ -2,23 +2,23 @@
 
 Cobaltstrike UDRL
 
-Feature :
-  - Redirect all WININET call over callstack crafting
+Features:
+  - Redirect all WININET calls over callstack crafting
   - Encrypt beacon during sleep
   - Encrypt beacon heap during sleep
   - Self delete of loader
 
-Callstack exemple :
+Callstack exemples:
 
-CreateThread :
+CreateThread:
 
 ![alt text](https://raw.githubusercontent.com/RtlDallas/OdinLdr/main/img/createthread_callstack.PNG)
 
-InternetOpenA :
+InternetOpenA:
 
 ![alt text](https://raw.githubusercontent.com/RtlDallas/OdinLdr/main/img/internetopa_callstack.PNG)
 
-WaitForSingleObject :
+WaitForSingleObject:
 
 ![alt text](https://raw.githubusercontent.com/RtlDallas/OdinLdr/main/img/wfso_scalltack.png)
 
@@ -50,16 +50,16 @@ WaitForSingleObject :
 
 - All WININET function is hooked and use callstack crafting for all wininet call
   
-- Sleep is hooked :
+- Sleep is hooked:
   
     1 - XOR the heap (random key for each sleep)
   
-    2 - Encrypt the beacon + udrl (remember he was copied at the end of beacon) with KrakenMask (ropchain, rwx->rw, encrypt, sleep, rw->rwx)
+    2 - Encrypt the beacon + udrl (remember this was copied at the end of beacon) with KrakenMask (ropchain, rwx->rw, encrypt, sleep, rw->rwx)
   
     3 - XOR the heap 
 
 
-- ExitThread is hooked :
+- ExitThread is hooked:
   
     1 - Destroy the beacon heap
   
@@ -74,7 +74,7 @@ Compile the loader and load the cna script (odin.cna)
   
 About the cna, you need to edit path of variable $loader_path at line 11 & 38
 
-# COBALTSTRIKE PROFIL NEED
+# COBALTSTRIKE PROFILE NEEDED
 
 ```
 http-beacon {
@@ -90,46 +90,46 @@ stage {
 
 # WARNING
 
-It's a POC, be carreful is you use this UDRL
+It's a POC, be careful when using this UDRL
 
-If you have crash, you can dm on twitter or open github issues, please send :
+If you happen to have a crash, you can dm on twitter or open github issues, please send:
 
 	- Cobaltstrike profil
 
   	- Debugger screen with callstack
 
-You need to have python on you're windows machine, you have post-ex build to run python script.
+You need to have python on your windows machine, you have post-ex build to run python script.
 
-Python script use sys and pefile
+Python script uses two libraries: sys and pefile
 
 # MEMORY SCANNER 
 
-Moneta :
+Moneta:
 
 ![alt text](https://raw.githubusercontent.com/RtlDallas/OdinLdr/main/img/moneta.PNG)
 
-Pe-Sieve :
+Pe-Sieve:
 
 ![alt text](https://raw.githubusercontent.com/RtlDallas/OdinLdr/main/img/pe-sieve.PNG)
 
-HuntSleepingBeacons :
+HuntSleepingBeacons:
 
 ![alt text](https://raw.githubusercontent.com/RtlDallas/OdinLdr/main/img/HuntSleepingBeacons.PNG)
 
 
 # CREDIT 
 
-For code :
+For code:
 
 - Callstack craffting : https://github.com/susMdT/LoudSunRun
 - Some parts of code : https://www.cobaltstrike.com/product/features/user-defined-reflective-loader
 
-For idea :
+For idea:
 
 - AceLdr : https://github.com/kyleavery/AceLdr
 - BokuLdr : https://github.com/boku7/BokuLoader
 - KaynStrike : https://github.com/Cracked5pider/KaynStrike
 
-Thanks to :
+Thanks to:
 
 - chatGPT, Bakki, Caracal & CobaltAD : For debug and somes help
