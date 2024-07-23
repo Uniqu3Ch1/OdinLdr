@@ -118,8 +118,8 @@ int EntryPoint() {
     odin.pBeaconAddr = (void*)uAllocatedAddr;
 
     /*
-    Comme on ne copie pas les DOS/NT Hrader du beacon, nous allons avoir 1024 bytes de libre au début de la zone alloué.
-    Dans celle-ci on va copier la structure ODIN avec un pattern de 16 bytes aléatoires. Elle contiendra les informations sur le HANDLE de Heap crée en amont et de la zone à chiffrer.
+    Comme on ne copie pas les DOS/NT Hrader du beacon, nous allons avoir 1024 bytes de libre au dÃ©but de la zone allouÃ©.
+    Dans celle-ci on va copier la structure ODIN avec un pattern de 16 bytes alÃ©atoires. Elle contiendra les informations sur le HANDLE de Heap crÃ©e en amont et de la zone Ã  chiffrer.
    
     MEM CONTENT :
 
