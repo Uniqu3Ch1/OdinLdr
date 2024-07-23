@@ -191,7 +191,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Native</SubSystem>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies />
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <OptimizeReferences>false</OptimizeReferences>
